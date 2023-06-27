@@ -52,17 +52,19 @@ const save=()=>{
 }
 const load=()=>{
 	var local=JSON.parse(localStorage["2023"])
-	sub[0].children[0].children[1].innerText=local.chinese
-	sub[1].children[0].children[1].innerText=local.math
-	sub[2].children[0].children[1].innerText=local.english
-	sub[3].children[0].children[1].innerText=local.physics
-	sub[4].children[0].children[1].innerText=local.chemistry
-	sub[5].children[0].children[1].innerText=local.politics
-	sub[6].children[0].children[1].innerText=local.history
-	sub[7].children[0].children[1].innerText=local.PE
-	stu[0].children[1].innerText=local.name
-	stu[1].children[1].innerText=local.id
-	stu[2].children[1].innerText=local.school
+	if(!!local){
+		sub[0].children[0].children[1].innerText=local.chinese
+		sub[1].children[0].children[1].innerText=local.math
+		sub[2].children[0].children[1].innerText=local.english
+		sub[3].children[0].children[1].innerText=local.physics
+		sub[4].children[0].children[1].innerText=local.chemistry
+		sub[5].children[0].children[1].innerText=local.politics
+		sub[6].children[0].children[1].innerText=local.history
+		sub[7].children[0].children[1].innerText=local.PE
+		stu[0].children[1].innerText=local.name
+		stu[1].children[1].innerText=local.id
+		stu[2].children[1].innerText=local.school
+	}
 	resize(),info(),point()
 	setTimeout(()=>{alert("本网站使用方法：\n分别点击学科、学生姓名、报名号、毕业学校，输入对应信息\n")},100)
 }
